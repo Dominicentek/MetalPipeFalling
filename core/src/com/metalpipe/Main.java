@@ -69,7 +69,7 @@ public class Main extends ApplicationAdapter {
 		Model model = builder.end();
 		box = new ModelInstance(model, "box");
 		pipe = new ModelInstance(model, "pipe");
-		pipe.transform.setFromEulerAngles(MathUtils.random(360f), MathUtils.random(360f), 0f);
+		pipe.transform.setFromEulerAngles(MathUtils.random(360f), MathUtils.random(360f), MathUtils.random(360f));
 		pipe.transform.trn(0, 9, 0);
 		instances = new Array<>();
 		instances.add(box);
