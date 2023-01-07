@@ -13,6 +13,7 @@ import com.badlogic.gdx.graphics.g3d.loader.ObjLoader;
 import com.badlogic.gdx.graphics.g3d.utils.CameraInputController;
 import com.badlogic.gdx.graphics.g3d.utils.MeshPartBuilder;
 import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.bullet.Bullet;
@@ -20,6 +21,8 @@ import com.badlogic.gdx.physics.bullet.collision.*;
 import com.badlogic.gdx.physics.bullet.dynamics.*;
 import com.badlogic.gdx.physics.bullet.linearmath.btMotionState;
 import com.badlogic.gdx.utils.Array;
+
+import java.util.Scanner;
 
 public class Main extends ApplicationAdapter {
 	public static PerspectiveCamera cam;
@@ -66,7 +69,7 @@ public class Main extends ApplicationAdapter {
 		Model model = builder.end();
 		box = new ModelInstance(model, "box");
 		pipe = new ModelInstance(model, "pipe");
-		pipe.transform.setFromEulerAngles(45f, 45f, 0f);
+		pipe.transform.setFromEulerAngles(MathUtils.random(360f), MathUtils.random(360f), 0f);
 		pipe.transform.trn(0, 9, 0);
 		instances = new Array<>();
 		instances.add(box);
